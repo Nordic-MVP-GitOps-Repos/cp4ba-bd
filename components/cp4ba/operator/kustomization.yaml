@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - subscription.yaml
-  - create-cert-manager-job.yaml
+  - create-cert-manager-job
