@@ -29,7 +29,7 @@ rules:
   - apiGroups:
       - operator.ibm.com
     resources:
-      - licensings
+      - ibmlicensings
     verbs:
       - get
       - watch
