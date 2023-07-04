@@ -15,7 +15,8 @@ spec:
           args:
             - -c
             - >-
-              git clone -b scripts https://github.com/IBM/ibm-common-service-operator.git
+              sleep 600
+              #git clone -b scripts https://github.com/IBM/ibm-common-service-operator.git
           volumeMounts:
             - mountPath: /work
               name: workarea  
@@ -26,7 +27,6 @@ spec:
           args:
             - -c
             - >-
-              sleep 60
               #./work/setup_singleton.sh --enable-licensing --license-accept &&
           volumeMounts:
             - mountPath: /work
