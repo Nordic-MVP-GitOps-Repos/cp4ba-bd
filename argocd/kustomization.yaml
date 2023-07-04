@@ -6,8 +6,9 @@ resources:
   #- cp4ba-argo-role.yaml
   #- cp4ba-argo-rb.yaml
 
-  - common.yaml
-  - operator.yaml
+  - secrets-generator.yaml
+  #- common.yaml
+  #- operator.yaml
 
   #- operators/all-operators.yaml
   
