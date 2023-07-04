@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - pvc.yaml
   - subscription.yaml
+  - create-cert-manager-job.yaml
