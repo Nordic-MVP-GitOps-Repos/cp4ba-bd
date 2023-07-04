@@ -7,6 +7,7 @@ resources:
   #- cp4ba-argo-rb.yaml
 
   - common.yaml
+  - operator.yaml
 
   #- operators/all-operators.yaml
   
