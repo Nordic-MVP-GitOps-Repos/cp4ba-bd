@@ -21,7 +21,7 @@ spec:
       prune: true
       selfHeal: true
   ignoreDifferences:
-    - group: ""
+    - group: "v1"
       kind: ServiceAccount
         jsonPointers:
           - /imagePullSecrets
