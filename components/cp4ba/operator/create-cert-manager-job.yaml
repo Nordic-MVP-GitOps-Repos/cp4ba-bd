@@ -34,5 +34,5 @@ spec:
       serviceAccountName: ibm-cp4ba-anyuid
       volumes:
         - name: workarea
-          persistentVolumeClaim:
-            claimName: workspace
+          emptyDir:
+            sizeLimit: 1Mi
