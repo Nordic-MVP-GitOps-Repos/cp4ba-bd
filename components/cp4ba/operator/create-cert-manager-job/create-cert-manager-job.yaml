@@ -36,4 +36,4 @@ spec:
       volumes:
         - name: workarea
           emptyDir:
-            sizeLimit: 1Mi
+            sizeLimit: 1Gi
