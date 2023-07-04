@@ -3,8 +3,8 @@ kind: Kustomization
 
 resources:
 
-  #- cp4ba-argo-role.yaml
-  #- cp4ba-argo-rb.yaml
+  - cp4ba-argo-role.yaml
+  - cp4ba-argo-rb.yaml
 
   - secrets-generator.yaml
   #- common.yaml
