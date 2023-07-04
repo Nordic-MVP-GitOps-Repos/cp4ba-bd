@@ -25,9 +25,9 @@ spec:
           command: ["/bin/sh"]
           args:
             - -c
-            - >-              
-              ./work/setup_singleton.sh --enable-licensing --license-accept &&
-              sleep 600
+            - >-
+              sleep 60
+              #./work/setup_singleton.sh --enable-licensing --license-accept &&
           volumeMounts:
             - mountPath: /work
               name: workarea
