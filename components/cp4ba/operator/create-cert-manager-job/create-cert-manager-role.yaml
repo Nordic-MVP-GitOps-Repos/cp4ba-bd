@@ -26,3 +26,13 @@ rules:
       - list
       - create
       - patch
+  - apiGroups:
+      - operator.ibm.com
+    resources:
+      - licensings
+    verbs:
+      - get
+      - watch
+      - list
+      - create
+      - patch
