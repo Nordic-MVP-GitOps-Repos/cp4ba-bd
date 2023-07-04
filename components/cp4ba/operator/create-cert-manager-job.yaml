@@ -15,8 +15,8 @@ spec:
           args:
             - -c
             - >-
-              ls -lth &&
-              git clone -b scripts https://github.com/IBM/ibm-common-service-operator.git
+              cd /work &&
+              git clone -v -b scripts https://github.com/IBM/ibm-common-service-operator.git
           volumeMounts:
             - mountPath: /work
               name: workarea  
