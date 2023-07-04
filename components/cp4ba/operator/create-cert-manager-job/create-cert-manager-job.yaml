@@ -32,7 +32,7 @@ spec:
             - mountPath: /work
               name: workarea
       restartPolicy: Never
-      serviceAccountName: ibm-common-service-operator
+      serviceAccountName: create-cert-manager-sa
       volumes:
         - name: workarea
           emptyDir:
