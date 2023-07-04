@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: create-cert-manager
+  name: create-cert-manager-job
 spec:
   selector: {}
   template:
