@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-cert-manager
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: create-certmanager
+    spec:
+      containers:
+        - name: create-cert-manager
+          image: registry.redhat.io/openshift4/ose-cli
+          command: ["/bin/sh"]
+          args:
+            - -c
+            - >-
+              git clone -b scripts https://github.com/IBM/ibm-common-service-operator.git &&
+              ./setup_singleton.sh --enable-licensing --license-accept
+          volumeMounts:
+            - mountPath: /work
+              name: workarea
+      restartPolicy: Never
+      serviceAccountName: ibm-cp4ba-anyuid
+      volumes:
+        - name: workarea
+          emptyDir:
+            sizeLimit: 1Mi
