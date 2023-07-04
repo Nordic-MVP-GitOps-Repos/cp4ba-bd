@@ -32,7 +32,7 @@ spec:
             - mountPath: /work
               name: workarea
       restartPolicy: Never
-      serviceAccountName: ibm-cp4ba-anyuid
+      serviceAccountName: ibm-common-service-operator
       volumes:
         - name: workarea
           emptyDir:
