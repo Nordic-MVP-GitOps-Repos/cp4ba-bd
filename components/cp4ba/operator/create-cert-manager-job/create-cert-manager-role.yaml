@@ -18,6 +18,7 @@ rules:
       - operators.coreos.com
     resources:
       - subscriptions
+      - operatorgroups
     verbs:
       - get
       - watch
