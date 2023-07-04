@@ -1,4 +1,4 @@
-apiVersion: batch/v1
+iapiVersion: batch/v1
 kind: Job
 metadata:
   name: create-cert-manager-job
@@ -34,5 +34,5 @@ spec:
       serviceAccountName: ibm-cp4ba-anyuid
       volumes:
         - name: workarea
-          emptyDir:
-            sizeLimit: 1Mi
+          persistentVolumeClaim:
+            claimName: workspace
