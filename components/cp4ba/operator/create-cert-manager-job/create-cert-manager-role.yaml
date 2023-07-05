@@ -30,6 +30,7 @@ rules:
       - operator.ibm.com
     resources:
       - ibmlicensings
+      - certmanagerconfigs
     verbs:
       - get
       - watch
