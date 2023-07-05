@@ -9,6 +9,7 @@ resources:
   - secrets-generator.yaml
   - common.yaml
   - operator.yaml
+  - operand.yaml
 
   #- operators/all-operators.yaml
   
