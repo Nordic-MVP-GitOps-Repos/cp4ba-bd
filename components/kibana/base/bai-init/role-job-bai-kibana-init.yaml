@@ -4,8 +4,8 @@ metadata:
   name: role-job-bai-kibana-init
 rules:
   - verbs:
-      - create
+      - get
     apiGroups:
-      - ""
+      - route.openshift.io
     resources:
-      - secrets
+      - routes
