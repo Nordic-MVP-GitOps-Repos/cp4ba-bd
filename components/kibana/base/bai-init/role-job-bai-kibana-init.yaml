@@ -11,6 +11,7 @@ rules:
       - routes
   - verbs:
       - get
+      - patch
     apiGroups:  
       - icp4a.ibm.com
     resources:
