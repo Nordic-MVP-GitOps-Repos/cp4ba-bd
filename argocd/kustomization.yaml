@@ -9,5 +9,6 @@ resources:
   #- secrets-generator.yaml
   - common.yaml
   - kibana-operator.yaml
+  - kibana.yaml
   - operator.yaml
   - operand.yaml
