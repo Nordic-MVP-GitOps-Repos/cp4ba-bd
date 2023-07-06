@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: bai-kibana-init
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: bai-kibana-init
+    spec:
+      serviceAccount: sa-job-bai-kibana-init
+      containers:
+        - name: update-bai
+          image: quay.io/openshift/origin-cli:latest
+          command: ["bash"]
+          args:
+            - '-c'
+            - |
+              set -euo pipefail
+              KIBANA_HOST=$(oc get route kibana -o "jsonpath={ .spec.host }")
+              oc patch ICP4ACluster icp4adeploy --type='merge' -p '{"spec":{"bai_configuration":{"settings":{"external_kibana_url":"https://'$KIBANA_HOST'"}}}}'
