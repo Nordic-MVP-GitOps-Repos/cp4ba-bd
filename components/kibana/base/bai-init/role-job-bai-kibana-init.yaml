@@ -9,3 +9,9 @@ rules:
       - route.openshift.io
     resources:
       - routes
+  - verbs:
+      - get
+    apiGroups:  
+      - icp4a.ibm.com
+    resources:
+      - icp4aclusters
