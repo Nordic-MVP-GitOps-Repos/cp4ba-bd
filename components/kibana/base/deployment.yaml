@@ -32,7 +32,7 @@ spec:
               - bash
               - -c
               - 'curl --fail http://localhost:5601/app/kibana -u $KIBANA_USERNAME:$KIBANA_PASSWORD'
-            initialDelaySeconds: 120
+            initialDelaySeconds: 30
             timeoutSeconds: 1
             periodSeconds: 10
             successThreshold: 1
@@ -68,7 +68,7 @@ spec:
             - name: ELASTICSEARCH_SSL_VERIFICATIONMODE
               value: 'none'
             - name: LOGGING_VERBOSE
-              value: 'true'
+              value: 'false'
           ports:
             - name: kibana-ui
               containerPort: 5601
