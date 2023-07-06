@@ -11,6 +11,7 @@ spec:
       name: bai-kibana-init
     spec:
       serviceAccount: sa-job-bai-kibana-init
+      restartPolicy: Never
       containers:
         - name: update-bai
           image: quay.io/openshift/origin-cli:latest
