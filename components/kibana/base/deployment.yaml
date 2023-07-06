@@ -31,7 +31,7 @@ spec:
               command:
               - bash
               - -c
-              - 'curl --fail http://localhost:5601/app/kibana -u $KIBANA_USERNAME:$KIBANA_PASSWORD'
+              - 'curl --fail http://localhost:5601/app/kibana -u $ELASTICSEARCH_USERNAME:$ELASTICSEARCH_PASSWORD'
             initialDelaySeconds: 30
             timeoutSeconds: 1
             periodSeconds: 10
@@ -42,17 +42,13 @@ spec:
               command:
               - bash
               - -c
-              - 'curl --fail http://localhost:5601/app/kibana -u $KIBANA_USERNAME:$KIBANA_PASSWORD'
+              - 'curl --fail http://localhost:5601/app/kibana -u $ELASTICSEARCH_USERNAME:$ELASTICSEARCH_PASSWORD'
             initialDelaySeconds: 125
             timeoutSeconds: 1
             periodSeconds: 10
             successThreshold: 1
             failureThreshold: 30
           env:
-            - name: KIBANA_USERNAME
-              value: 'kibana_admin_user'
-            - name: KIBANA_PASSWORD
-              value: 'kibana-password'
             - name: ELASTICSEARCH_HOSTS
               value: 'https://iaf-system-elasticsearch-es.cp4ba-starter.svc.cluster.local:9200'
             - name: ELASTICSEARCH_USERNAME
