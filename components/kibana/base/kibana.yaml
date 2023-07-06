@@ -3,5 +3,8 @@ kind: Kibana
 metadata:
   name: kibana
 spec:
+  elasticsearchRef:
+    secretName: iaf-system-elasticsearch-es-default-user
+    serviceName: iaf-system-elasticsearch-es.cp4ba-starter.svc.cluster.local:9200
   version: 7.17.11
   count: 1
