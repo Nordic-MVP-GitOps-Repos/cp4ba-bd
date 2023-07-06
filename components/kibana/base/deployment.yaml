@@ -1,0 +1,80 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kibana-app
+      component: kibana
+  template:
+    metadata:
+      labels:
+        app: kibana-app
+        component: kibana
+    restartPolicy: Always
+    spec:
+      containers:
+        - name: kibana
+          resources:
+            limits:
+              cpu: '1'
+              memory: 2Gi
+            requests:
+              cpu: 100m
+              memory: 1Gi
+          terminationMessagePolicy: File
+          terminationMessagePath: /dev/termination-log
+          readinessProbe:
+            exec:
+              command:
+              - bash
+              - -c
+              - 'curl --fail http://localhost:5601/app/kibana -u $KIBANA_USERNAME:$KIBANA_PASSWORD'
+            initialDelaySeconds: 120
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 30
+          livenessProbe:
+            exec:
+              command:
+              - bash
+              - -c
+              - 'curl --fail http://localhost:5601/app/kibana -u $KIBANA_USERNAME:$KIBANA_PASSWORD'
+            initialDelaySeconds: 125
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 30
+          env:
+            - name: KIBANA_USERNAME
+              value: 'kibana_admin_user'
+            - name: KIBANA_PASSWORD
+              value: 'kibana-password'
+            - name: ELASTICSEARCH_HOSTS
+              value: 'https://iaf-system-elasticsearch-es.cp4ba-starter.svc.cluster.local:9200'
+            - name: ELASTICSEARCH_USERNAME
+              valueFrom:
+                 secretKeyRef:
+                   name: iaf-system-elasticsearch-es-default-user
+                   key: username
+            - name: ELASTICSEARCH_PASSWORD
+              valueFrom:
+                 secretKeyRef:
+                   name: iaf-system-elasticsearch-es-default-user
+                   key: password
+            - name: ELASTICSEARCH_SSL_VERIFICATIONMODE
+              value: 'none'
+            - name: LOGGING_VERBOSE
+              value: 'true'
+          ports:
+            - name: kibana-ui
+              containerPort: 5601
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          image: docker.elastic.co/kibana/kibana-oss:7.17.11
+  strategy:
+    type: Recreate
+
