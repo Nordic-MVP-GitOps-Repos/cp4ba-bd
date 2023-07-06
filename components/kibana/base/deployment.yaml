@@ -74,7 +74,7 @@ spec:
               containerPort: 5601
               protocol: TCP
           imagePullPolicy: IfNotPresent
-          image: docker.elastic.co/kibana/kibana-oss:7.17.11
+          image: docker.elastic.co/kibana/kibana-oss:7.10.2
   strategy:
     type: Recreate
 
