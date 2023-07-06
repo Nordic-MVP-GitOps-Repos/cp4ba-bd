@@ -13,7 +13,6 @@ spec:
       labels:
         app: kibana-app
         component: kibana
-    restartPolicy: Always
     spec:
       containers:
         - name: kibana
