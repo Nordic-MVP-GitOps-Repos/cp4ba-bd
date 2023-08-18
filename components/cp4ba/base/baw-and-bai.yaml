@@ -124,7 +124,7 @@ spec:
     workstreams:
       bai: true
       baml: false
-      case: false
+      case: true
       content_integration: false
       pfs: true
       workstreams: false
