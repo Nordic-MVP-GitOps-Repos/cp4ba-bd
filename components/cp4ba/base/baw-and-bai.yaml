@@ -123,7 +123,7 @@ spec:
       bai: false
     workstreams:
       bai: true
-      baml: false
+      baml: true
       case: true
       content_integration: false
       pfs: true
