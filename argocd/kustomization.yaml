@@ -8,6 +8,6 @@ resources:
 
   #- secrets-generator.yaml
   - common.yaml
-  - kibana.yaml
+  #- kibana.yaml
   - operator.yaml
   - operand.yaml
