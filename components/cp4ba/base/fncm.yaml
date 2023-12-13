@@ -64,41 +64,6 @@ spec:
             dc_os_xa_datasource_name: AEOSXA
           oc_cpe_obj_store_display_name: AEOS
           oc_cpe_obj_store_symb_name: AEOS
-  olm_production_option:
-    adp:
-      cmis: false
-      css: false
-      document_processing_runtime: false
-      es: false
-      tm: false
-    ads:
-      ads_designer: false
-      ads_runtime: false
-      bai: false
-    application:
-      app_designer: false
-      ae_data_persistence: false
-    content:
-      bai: false
-      cmis: false
-      css: false
-      es: false
-      iccsap: false
-      ier: false
-      tm: false
-    decisions:
-      decisionCenter: false
-      decisionRunner: false
-      decisionServerRuntime: false
-      bai: false
-    wfps_authoring:
-      bai: false
-      pfs: false
-    workfow_authoring:
-      bai: false
-      pfs: false
-    workfow_runtime:
-      bai: false
   olm_starter_option:
     adp:
       cmis: false
@@ -330,18 +295,11 @@ spec:
     lc_ldap_user_name_attribute: 'user:sAMAccountName'
     lc_selected_ldap_type: Microsoft Active Directory
   appVersion: 23.0.1
-  olm_starter_application: false
+  olm_starter_application: true
   olm_starter_content: true
   olm_starter_decisions: false
   olm_starter_decisions_ads: false
   olm_starter_document_processing: false
   olm_starter_workflow: false
   olm_deployment_type: Starter
-  olm_production_application: false
-  olm_production_content: false
-  olm_production_decisions: false
-  olm_production_decisions_ads: false
-  olm_production_document_processing: false
-  olm_production_workflow: false
-  olm_production_workflow_process_service: false
   olm_ibm_license: true
