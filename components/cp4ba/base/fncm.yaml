@@ -287,7 +287,7 @@ spec:
       services_namespace: ''
     storage_configuration:
       sc_dynamic_storage_classname: ocs-storagecluster-cephfs
-      sc_block_storage_classname: ocs-storagecluster-ceph-rgw
+      sc_block_storage_classname: ocs-storagecluster-ceph-rbd
       sc_fast_file_storage_classname: ''
       sc_medium_file_storage_classname: ''
       sc_slow_file_storage_classname: ''
