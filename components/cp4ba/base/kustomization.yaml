@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   #- baw-and-bai.yaml
-  #- fncm.yaml
+  - non-admin-secret.yaml
