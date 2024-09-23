@@ -9,13 +9,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "100"
 spec:
   destination:
-    namespace: cp4ba-starter
+    namespace: cp4ba
     server: https://kubernetes.default.svc
   project: default
   source:
     path: ./components/cp4ba/operator
-    targetRevision: 'HEAD'
-    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/cp4ba.git
+    targetRevision: HEAD
+    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/cp4ba-bd.git
   syncPolicy:
     automated:
       prune: true

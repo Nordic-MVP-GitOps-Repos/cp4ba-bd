@@ -6,4 +6,5 @@ resources:
   - namespace.yaml
   - operatorgroup.yaml
   - serviceaccount.yaml
+  - clusterrole.yaml
   - clusterrolebinding-scc.yaml

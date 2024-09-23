@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     path: ./argocd
-    targetRevision: 'HEAD'
-    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/cp4ba.git
+    targetRevision: HEAD
+    repoURL: https://github.com/Nordic-MVP-GitOps-Repos/cp4ba-bd.git
   syncPolicy:
     automated:
       prune: true
